@@ -1,0 +1,35 @@
+<!-- registration.component.html -->
+<div class="registration-container">
+  <div class="left-panel">
+    <h1>Let’s Get Started</h1>
+    <p>
+      Join us today and experience seamless restaurant booking and table
+      management.
+    </p>
+  </div>
+
+  <div class="right-panel">
+    <h2>Sign up</h2>
+    <form>
+      <input type="text" placeholder="Your name" required />
+      <input type="email" placeholder="Your Email" required />
+      <input type="password" placeholder="Create Password" required />
+      <input type="password" placeholder="Repeat password" required />
+
+      <div class="or-divider">OR</div>
+
+      <div class="social-icons">
+        <button type="button" class="social-btn fb">f</button>
+        <button type="button" class="social-btn tw">t</button>
+        <button type="button" class="social-btn g">G</button>
+      </div>
+
+      <button type="submit" class="signup-btn">Sign up</button>
+
+      <p class="login-text">
+        Already a Member?
+        <a routerLink="/login">Sign in here</a>
+      </p>
+    </form>
+  </div>
+</div>

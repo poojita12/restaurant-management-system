@@ -1,0 +1,122 @@
+.registration-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.left-panel {
+  flex: 1;
+  background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6')
+    no-repeat center center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  backdrop-filter: brightness(0.7);
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 400px;
+  }
+}
+
+.right-panel {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin: 8px 0;
+      padding: 12px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .or-divider {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      .social-btn {
+        background: transparent;
+        border: 1px solid #ccc;
+        color: white;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1rem;
+
+        &.fb {
+          border-color: #3b5998;
+        }
+        &.tw {
+          border-color: #1da1f2;
+        }
+        &.g {
+          border-color: #db4437;
+        }
+      }
+    }
+
+    .signup-btn {
+      background: #0f9d58;
+      border: none;
+      color: white;
+      padding: 12px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+
+      &:hover {
+        background: #0c7a43;
+      }
+    }
+
+    .login-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+
+      a {
+        color: #0f9d58;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
