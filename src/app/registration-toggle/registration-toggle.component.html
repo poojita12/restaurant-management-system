@@ -1,0 +1,35 @@
+<div class="toggle-container">
+  <!-- Title -->
+  <h1>{{ isSignUp ? 'Create Account' : 'Welcome Back!' }}</h1>
+  <p>{{ isSignUp ? 'Join us and start reserving tables today.' : 'Log in to manage your reservations.' }}</p>
+
+  <!-- Sign Up Form -->
+  <form *ngIf="isSignUp" (ngSubmit)="onSignUp()" #signUpForm="ngForm">
+    <input type="text" name="name" [(ngModel)]="signUpData.name" placeholder="Your Name" required>
+    <input type="email" name="email" [(ngModel)]="signUpData.email" placeholder="Your Email" required>
+    <input type="password" name="password" [(ngModel)]="signUpData.password" placeholder="Password" required>
+    <input type="password" name="confirmPassword" [(ngModel)]="signUpData.confirmPassword" placeholder="Confirm Password" required>
+    
+    <!-- Live binding preview -->
+    <p *ngIf="signUpData.name">Hello, {{ signUpData.name }}!</p>
+
+    <button type="submit">Sign Up</button>
+    <p class="toggle-text">Already have an account? 
+      <a href="#" (click)="toggleForm()">Sign In</a>
+    </p>
+  </form>
+
+  <!-- Sign In Form -->
+  <form *ngIf="!isSignUp" (ngSubmit)="onSignIn()" #signInForm="ngForm">
+    <input type="email" name="email" [(ngModel)]="signInData.email" placeholder="Your Email" required>
+    <input type="password" name="password" [(ngModel)]="signInData.password" placeholder="Password" required>
+
+    <!-- Live binding preview -->
+    <p *ngIf="signInData.email">Logging in as: {{ signInData.email }}</p>
+
+    <button type="submit">Sign In</button>
+    <p class="toggle-text">Don't have an account? 
+      <a href="#" (click)="toggleForm()">Sign Up</a>
+    </p>
+  </form>
+</div>

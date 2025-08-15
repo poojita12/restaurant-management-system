@@ -1,0 +1,80 @@
+.registration-container {
+  display: flex;
+  height: 100vh;
+  background: url('/assets/food1.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.left-panel {
+  flex: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+}
+
+.left-panel h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.left-panel p {
+  font-size: 1.2rem;
+}
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  color: white;
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #00c853;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #00a844;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-text a {
+  color: #00c853;
+}

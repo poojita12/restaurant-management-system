@@ -1,0 +1,27 @@
+<div class="registration-container">
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <h1>WELCOME</h1>
+    <p>
+      From reservation to dessert — your perfect dining journey starts here."
+    </p>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+      <h2>Sign Up</h2>
+
+      <input type="text" name="name" [(ngModel)]="user.name" placeholder="Your name" required>
+      <input type="email" name="email" [(ngModel)]="user.email" placeholder="Your email" required>
+      <input type="password" name="password" [(ngModel)]="user.password" placeholder="Create password" required>
+      <input type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" placeholder="Repeat password" required>
+
+      <button type="submit">Sign Up</button>
+
+      <p class="login-text">
+        Already a Member? <a href="#">Sign in here</a>
+      </p>
+    </form>
+  </div>
+</div>
