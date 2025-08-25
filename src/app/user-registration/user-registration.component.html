@@ -2,26 +2,70 @@
   <!-- Left Panel -->
   <div class="left-panel">
     <h1>WELCOME</h1>
-    <p>
-      From reservation to dessert — your perfect dining journey starts here."
-    </p>
+    <p>From reservation to dessert — your perfect dining journey starts here.</p>
   </div>
 
   <!-- Right Panel -->
   <div class="right-panel">
-    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+    <form (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm" novalidate>
       <h2>Sign Up</h2>
 
-      <input type="text" name="name" [(ngModel)]="user.name" placeholder="Your name" required>
-      <input type="email" name="email" [(ngModel)]="user.email" placeholder="Your email" required>
-      <input type="password" name="password" [(ngModel)]="user.password" placeholder="Create password" required>
-      <input type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" placeholder="Repeat password" required>
+      <!-- Name -->
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="user.name"
+        placeholder="Your name"
+        required
+        #name="ngModel">
+      <div class="error" *ngIf="name.invalid && name.touched">Name is required</div>
 
-      <button type="submit">Sign Up</button>
+      <!-- Email -->
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="user.email"
+        placeholder="Your email"
+        required
+        email
+        #email="ngModel">
+      <div class="error" *ngIf="email.invalid && email.touched">Enter a valid email</div>
+
+      <!-- Password -->
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="user.password"
+        placeholder="Create password"
+        required
+        minlength="6"
+        #password="ngModel">
+      <div class="error" *ngIf="password.invalid && password.touched">
+        Password must be at least 6 characters
+      </div>
+
+    
+      <input
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="user.confirmPassword"
+        placeholder="Repeat password"
+        required
+        #confirmPassword="ngModel">
+      <div class="error" *ngIf="confirmPassword.invalid && confirmPassword.touched">
+        Confirm password is required
+      </div>
+      <div class="error" *ngIf="user.password !== user.confirmPassword && confirmPassword.touched">
+        Passwords do not match
+      </div>
+
+      
+      <button type="submit" [disabled]="registrationForm.invalid">Sign Up</button>
 
       <p class="login-text">
-        Already a Member? <a href="#">Sign in here</a>
-      </p>
+              Already a Member? <a routerLink="/login">Sign in here</a>
+       </p>
+
     </form>
   </div>
 </div>

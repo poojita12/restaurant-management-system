@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-registration',
@@ -13,7 +14,15 @@ export class UserRegistrationComponent {
     confirmPassword: ''
   };
 
-  onSubmit() {
-    console.log('User registered:', this.user);
+  constructor(private router: Router) {}
+
+  onSubmit(form: any) {
+    if (form.valid && this.user.password === this.user.confirmPassword) {
+      console.log('User registered successfully:', this.user);
+      
+      this.router.navigate(['/book-table']);
+    } else {
+      console.log('Form invalid or passwords do not match');
+    }
   }
 }
