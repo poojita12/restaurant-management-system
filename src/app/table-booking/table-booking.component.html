@@ -1,15 +1,37 @@
-<div class="card">
-  <h2> Book a Table</h2>
-  <form>
-    <label>Number of People:</label>
-    <input type="number" placeholder="Enter number of people" />
+<div class="booking-container">
+  <div class="card">
+    <h2>Restaurant Table Booking</h2>
 
-    <label>Time Slot:</label>
-    <input type="time" />
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" />
+      <div *ngIf="f['name'].touched && f['name'].invalid" class="error">
+        Name is required (min 2 characters).
+      </div>
 
-    <label>Table Number:</label>
-    <input type="number" placeholder="Enter table number" />
+      <label for="date">Date:</label>
+      <input id="date" type="date" formControlName="date" />
+      <div *ngIf="f['date'].touched && f['date'].invalid" class="error">
+        Date is required.
+      </div>
 
-    <button type="submit">Book Table</button>
-  </form>
+      <label for="time">Time:</label>
+      <input id="time" type="time" formControlName="time" />
+      <div *ngIf="f['time'].touched && f['time'].invalid" class="error">
+        Time is required.
+      </div>
+
+      <label for="seats">Number of Seats:</label>
+      <input id="seats" type="number" formControlName="seats" min="1" max="20" />
+      <div *ngIf="f['seats'].touched && f['seats'].invalid" class="error">
+        Seats must be between 1 and 20.
+      </div>
+
+      <button type="submit" [disabled]="bookingForm.invalid">Book Table</button>
+    </form>
+
+    <p class="back-link">
+      <a routerLink="/register-user">⬅ Back to Registration</a>
+    </p>
+  </div>
 </div>
