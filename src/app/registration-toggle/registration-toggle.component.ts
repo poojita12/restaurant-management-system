@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   
 })
 export class RegistrationToggleComponent {
-  // Toggle state
+  
   isSignUp = true;
 
-  // Sign Up form data
+  
   signUpData = {
     name: '',
     email: '',
@@ -17,13 +17,13 @@ export class RegistrationToggleComponent {
     confirmPassword: ''
   };
 
-  // Sign In form data
+  
   signInData = {
     email: '',
     password: ''
   };
 
-  // Switch between forms
+  
   toggleForm() {
     this.isSignUp = !this.isSignUp;
   }

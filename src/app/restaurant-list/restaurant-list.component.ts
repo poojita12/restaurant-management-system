@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RestaurantService } from '../services/restaurant.service';
+import { RestaurantDetails } from '../model/restaurant-details';
+
 
 @Component({
   selector: 'app-restaurant-list',
@@ -6,15 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurant-list.component.scss']
 })
 export class RestaurantListComponent implements OnInit {
-  
-  restaurants: any[] = [];
+
+  restaurants: RestaurantDetails[] = [];
+
+  constructor(private restaurantService: RestaurantService) {}
 
   ngOnInit(): void {
-    // Dummy data for now, can replace with API call
-    this.restaurants = [
-      { name: 'The Cozy Corner', location: 'MG Road', cuisine: 'Italian' },
-      { name: 'Spice Heaven', location: 'Brigade Road', cuisine: 'Indian' },
-      { name: 'Sushi World', location: 'Koramangala', cuisine: 'Japanese' }
-    ];
+    this.restaurants = this.restaurantService.getRestaurants();
   }
 }

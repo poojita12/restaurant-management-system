@@ -5,16 +5,23 @@ import { RestaurantListComponent } from './restaurant-list/restaurant-list.compo
 import { TableBookingComponent } from './table-booking/table-booking.component';
 import { TableAvailabilityComponent } from './table-availability/table-availability.component';
 import { RegistrationToggleComponent } from './registration-toggle/registration-toggle.component';
-
+import { LoginComponent } from './user-registration/login/login.component';
+import { EmployeeRegistrationComponent } from './user-registration/employee-registration/employee-registration.component'; // ✅ Added import
 
 const routes: Routes = [
-  { path: 'register-user', component: UserRegistrationComponent },
+  { path: 'register', component: UserRegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'employee-register', component: EmployeeRegistrationComponent }, // ✅ Fixed placement
   { path: 'restaurants', component: RestaurantListComponent },
   { path: 'book-table', component: TableBookingComponent },
   { path: 'check-tables', component: TableAvailabilityComponent },
-  { path: '', redirectTo: '/register-user', pathMatch: 'full' },
-  { path: 'register-toggle', component: RegistrationToggleComponent }
+  { path: 'register-toggle', component: RegistrationToggleComponent },
 
+  // Default route → Registration page
+  { path: '', redirectTo: '/register', pathMatch: 'full' },
+
+  // Wildcard route → Redirect unknown paths back to register
+  { path: '**', redirectTo: '/register' }
 ];
 
 @NgModule({

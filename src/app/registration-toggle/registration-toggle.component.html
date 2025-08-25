@@ -10,7 +10,7 @@
     <input type="password" name="password" [(ngModel)]="signUpData.password" placeholder="Password" required>
     <input type="password" name="confirmPassword" [(ngModel)]="signUpData.confirmPassword" placeholder="Confirm Password" required>
     
-    <!-- Live binding preview -->
+    
     <p *ngIf="signUpData.name">Hello, {{ signUpData.name }}!</p>
 
     <button type="submit">Sign Up</button>
@@ -19,12 +19,12 @@
     </p>
   </form>
 
-  <!-- Sign In Form -->
+  
   <form *ngIf="!isSignUp" (ngSubmit)="onSignIn()" #signInForm="ngForm">
     <input type="email" name="email" [(ngModel)]="signInData.email" placeholder="Your Email" required>
     <input type="password" name="password" [(ngModel)]="signInData.password" placeholder="Password" required>
 
-    <!-- Live binding preview -->
+    
     <p *ngIf="signInData.email">Logging in as: {{ signInData.email }}</p>
 
     <button type="submit">Sign In</button>
